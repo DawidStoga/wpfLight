@@ -1,0 +1,41 @@
+﻿<Window x:Class="RSReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSReader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1274.717" Width="1491.477">
+    <Window.Resources>
+        <XmlDataProvider x:Key="DataRss" XPath="//item" Source="http://www.polsatnews.pl/rss/wszystkie.xml">
+
+        </XmlDataProvider>
+    </Window.Resources>
+
+    <Grid RenderTransformOrigin="0.484,0.482" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="442*"></RowDefinition>
+            <RowDefinition Height="803*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" x:Name="LB1" ItemsSource="{ Binding Source={StaticResource DataRss}}" Margin="0,0,0,84">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding XPath=title}" FontWeight="Bold">
+
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel  Grid.Row="1" Orientation="Vertical" DataContext="{Binding ElementName=LB1, Path=SelectedItem}" d:IsHidden="True">
+            <TextBlock  x:Name="t1" Background="Aquamarine" Text="{Binding XPath=pubDate}"/>
+            <Button Content="Button" HorizontalAlignment="Left" Height="9" Grid.Row="1" VerticalAlignment="Top" Width="3" Click="Button_Click"/>
+            <TextBlock   Background="Red" Text="{Binding XPath=description}"/>
+            <TextBlock Background="Tan" ><Hyperlink x:Name="News" Tag="{Binding InnerText, XPath=link}" Click="News_Click"><Run Text="Go to this article"/></Hyperlink></TextBlock>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
