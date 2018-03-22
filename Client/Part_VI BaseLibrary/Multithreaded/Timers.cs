@@ -16,7 +16,7 @@ namespace Client.BaseLibrary
                 (x) => { Console.Write("TimerCallback{}",x); });
 
            // Timer timer = new Timer(timerCB, "who", 3000, 15000);
-
+           // Short version
             Timer timer = new Timer((x) => { Console.Write($" time {DateTime.Now.TimeOfDay}  result: {x.ToString()}"); }, "who", 3000, 15000);
          
 

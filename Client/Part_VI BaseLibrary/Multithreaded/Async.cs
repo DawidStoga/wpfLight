@@ -77,13 +77,13 @@ namespace Client.BaseLibrary
         {
 
             await DoSomethingAsync();
-            for(int i=0; i<100; i++)
+            for(var i=0; i<100; i++)
             {
                 Thread.Sleep(10);
                 Console.Write(".");
             }
           int x =  await  ReturnSomethingAsync();
-            for (int i = 0; i < 100; i++)
+            for (var i = 0; i < 100; i++)
             {
                 Thread.Sleep(100);
                 Console.Write(".");
@@ -92,8 +92,8 @@ namespace Client.BaseLibrary
            await  WaitngAsync();
          x  =    await MyIntegerEventAsync();
             Console.WriteLine("Return: {0}:", x);
-
-            FunWithContex();
+            //Retun void
+            FunWithContexAsync();
         }
 
 
@@ -118,7 +118,7 @@ namespace Client.BaseLibrary
             return tcs.Task;
         }
 
-        private static async void FunWithContex()
+        private static async void FunWithContexAsync()
         {
             Console.WriteLine( Thread.CurrentContext.ContextID);
             await FunWithContexTask();
