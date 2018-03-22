@@ -40,7 +40,7 @@ namespace Client
             using (StreamWriter sw = new StreamWriter(@"E:\out.txt"))
             {
                 Console.SetOut(sw);
-                Console.WriteLine("DAWID STOGA");
+                Console.WriteLine("DAWID STOGA 134619");
 
 
 

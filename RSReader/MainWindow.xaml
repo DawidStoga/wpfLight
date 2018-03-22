@@ -12,7 +12,7 @@
         </XmlDataProvider>
     </Window.Resources>
 
-    <Grid RenderTransformOrigin="0.484,0.482" >
+    <Grid RenderTransformOrigin="0.484,0.382" >
         <Grid.RowDefinitions>
             <RowDefinition Height="442*"></RowDefinition>
             <RowDefinition Height="803*"></RowDefinition>
