@@ -49,7 +49,7 @@ namespace Client.Assemblies
                 var  sRetun = methInfo.Invoke(extObj, new object[] { "I invokded method by reflection" });
                 Console.WriteLine(sRetun);
 
-                // 2'nd way    Dunamic keyword
+                // 2'nd way    Dunamic keyword     check in .NET4.7
                  dynamic obj = Activator.CreateInstance(myExtClass, new object[] { "dawid" });
                 sRetun =  obj.ShowMessage("..Now I invokded method by dynamic");
                 Console.WriteLine(sRetun);
