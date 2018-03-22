@@ -44,7 +44,7 @@ namespace Client
 
 
 
-#if false
+#if TRACE
                 CoreCSPart1.RunExamples(
                 CoreCSPart1.Examples.Enviroment
              | CoreCSPart1.Examples.Decision_Constructs
@@ -110,9 +110,9 @@ namespace Client
         }
 
 
-        static class MyStaticClass
+        static class ExampleofStaticClass
         {
-            static void Meth()
+            static void ExampleOfstaticMethod()
             {
                 Console.WriteLine("Static meth in static Class");
             }
