@@ -16,11 +16,11 @@ namespace Client.BaseLibrary
     {
         public static void RunIO()
         {
-            //  DirectoryTest();
-            //  DirectoryInfoTest();
-            //  FileTest();
-            //  FileInfoTest();
-            //   FileStreamTest();
+              DirectoryTest();
+             DirectoryInfoTest();
+             FileTest();
+              FileInfoTest();
+               FileStreamTest();
             StreamWriter();
 
         }

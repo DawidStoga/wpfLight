@@ -11,11 +11,11 @@ namespace Client.BaseLibrary
         public static void RunExamples()
         {
             // TestTimers();
-            // TestPlinq();
-            // DelegateTest();
-            //  ThreadExamples();
-             TPFExamples();
-           // RunExamplesAsync();
+            //TestPlinq();
+           // DelegateTest();
+           // ThreadExamples();
+          //  TPFExamples();
+          // RunExamplesAsync();
 
 
 

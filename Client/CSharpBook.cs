@@ -40,7 +40,7 @@ namespace Client
             using (StreamWriter sw = new StreamWriter(@"E:\out.txt"))
             {
                 Console.SetOut(sw);
-                Console.WriteLine("DAWID STOGA");
+                Console.WriteLine("DAWID STOGA - WROC");
 
 
 
@@ -55,28 +55,29 @@ namespace Client
              | CoreCSPart1.Examples.SystemDataTypes
              );
 #endif
+
+                 Console.SetOut(saved);
+
+
+                  Multithreaded.RunExamples();
+                //  IO.RunIOExamples();
+                // AdoNET.RunAdoExamples();
+
+
+
+                //CoreCSPart2.Run();
+               // OOP_Encaps.Run();
+                //OOP_Inher_Poli.Run();
+                //Interfaces.Run();
+               // Adv.CollRun();
+                // Adv.DelRun();
+                //Adv.CollRun();
+              // Assembliesmod asmMod = new Assembliesmod();
+              // asmMod.Run();
+                //  LateBinding.Run();
+                // FunWithAttributes.Run();
+
             }
-            Console.SetOut(saved);
-
-
-          //  Multithreaded.RunExamples();
-          //  IO.RunIOExamples();
-           // AdoNET.RunAdoExamples();
-
-
-
-        //   CoreCSPart2.Run();
-          OOP_Encaps.Run();
-        //   OOP_Inher_Poli.Run();
-        //Interfaces.Run();
-        // Adv.CollRun();
-        //  Adv.DelRun();
-        // Adv.CollRun();
-        // Assembliesmod asmMod = new Assembliesmod();
-        //asmMod.Run();
-        //  LateBinding.Run();
-        // FunWithAttributes.Run();
-
             //  TaskHandling.CallAsyncs();
             // TaskHandling.CallAsyc();
 

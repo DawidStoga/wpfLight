@@ -76,12 +76,22 @@ namespace Client.BaseLibrary
         public static async void RunExamplesAsync()
         {
 
-       /*     await DoSomethingAsync();
+            await DoSomethingAsync();
+            for(int i=0; i<100; i++)
+            {
+                Thread.Sleep(10);
+                Console.Write(".");
+            }
           int x =  await  ReturnSomethingAsync();
+            for (int i = 0; i < 100; i++)
+            {
+                Thread.Sleep(100);
+                Console.Write(".");
+            }
             Console.WriteLine("Return: {0}:", x);
            await  WaitngAsync();
          x  =    await MyIntegerEventAsync();
-            Console.WriteLine("Return: {0}:", x);*/
+            Console.WriteLine("Return: {0}:", x);
 
             FunWithContex();
         }

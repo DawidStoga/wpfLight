@@ -18,14 +18,15 @@ namespace Client.BaseLibrary
         public static void TPFExamples()
         {
             // TestParallelFor();
-            //  TestNormalFor();
-            // TestParallerFor();
-            //  TestTask();
+            //TestNormalFor();
+            // TestParallelForEach();
+             //  Starting();
             // Waiting();
             //   Result();
             //Continuation();
-            TestParallelInvoke();
-           // TestTaskCancelation();
+           // TestParallelInvoke();
+            // TestTaskCancelation();
+            CallAsyc();
         }
 
 
@@ -79,7 +80,7 @@ namespace Client.BaseLibrary
                 started.Add(item);
                 Console.WriteLine($"Iterator: {item}   started");
                 Thread.Sleep(DateTime.Now.Millisecond * 10);
-                if (item == breakNo)
+                if (item == 20)
                 {
                     state.Break();
                     Console.WriteLine($"Stopped: {item}");
@@ -197,7 +198,7 @@ namespace Client.BaseLibrary
 
 
 
-        public static void starting()
+        public static void Starting()
         {
             Console.WriteLine("=================== STARTING TASK + PROPERTIES===========================\n\n");
             Console.WriteLine("Main Thread Id: {0}", Thread.CurrentThread.ManagedThreadId);
@@ -307,6 +308,7 @@ namespace Client.BaseLibrary
             Stopwatch sw = new Stopwatch();
             CancellationTokenSource cs = new CancellationTokenSource(2000);
             CancellationToken ct = cs.Token;
+            
             
             sw.Start();
             var task_w = Task.Run(() => { Console.WriteLine("task_1  ID:{0}", Thread.CurrentThread.ManagedThreadId); Thread.Sleep(1000); });
@@ -419,7 +421,7 @@ namespace Client.BaseLibrary
             //not good idea
 
             Console.WriteLine("taskR.Result {0}", taskGA.GetAwaiter().GetResult());
-
+            
 
             // await  see Async.cs
         }
@@ -532,8 +534,10 @@ namespace Client.BaseLibrary
 
         static public async void CallAsyc()
         {
-            TakeIntAsync();
+            int res = await TakeIntAsync();
             int ret = await MethAsync();
+             CallAsyncs();
+
             Console.WriteLine(ret);
             Console.WriteLine("Test");
         }
@@ -569,6 +573,7 @@ namespace Client.BaseLibrary
 
         static public void CallAsyncs()
         {
+          
             Console.WriteLine(TakeIntAsync().Result);
             for (int z = 0; z < 10000; z++)
             {

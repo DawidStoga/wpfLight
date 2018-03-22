@@ -34,29 +34,29 @@ namespace Client.ADVANCED
         }
         public static void DelRun()
         {
-            //Delegats del = new Delegats();
-            //del.CallDelegat();
-            //del.CallDelegatAsync();
-            //del.CallFuncAction();
-            //Events events = new Events();
-            //events.TestEventPatern();
+            Delegats del = new Delegats();
+            del.CallDelegat();
+            del.CallDelegatAsync();
+            del.CallFuncAction();
+            Events events = new Events();
+            events.TestEventPatern();
 
 
-            //Lambda l = new Lambda();
-            //l.Test();
+            Lambda l = new Lambda();
+            l.Test();
 
 
 
-            //Indexer ind = new Indexer();
-            //ind.TestIndex();
-            //TestOperators toper = new TestOperators();
-            //toper.Test();
-            //toper.ExtMet(ConsoleColor.Blue);
+           Indexer ind = new Indexer();
+            ind.TestIndex();
+           TestOperators toper = new TestOperators();
+           toper.Test();
+           toper.ExtMet(ConsoleColor.Blue);
 
 
-            //Linq.LinqToObject.NonGeneric();
-            //Linq.LinqToObject.FromGeneric();
-            //Linq.LinqToObject.CompareItems();
+            Linq.LinqToObject.NonGeneric();
+           Linq.LinqToObject.FromGeneric();
+            Linq.LinqToObject.CompareItems();
 
 
 

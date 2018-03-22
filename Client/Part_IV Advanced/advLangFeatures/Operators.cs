@@ -38,7 +38,7 @@ namespace Client.ADVANCED.advLangFeatures
 
             CustomConversionB customBfromA = (CustomConversionB)customA;
             CustomConversionB customBfromCex = (CustomConversionB)customC;
-            CustomConversionB customBfromCimp = (CustomConversionB)customC;
+            CustomConversionB customBfromCimp =  customC;
             Console.WriteLine("CustomBfromA : {0}", customBfromA.ReverseDescription);
             Console.WriteLine("CustomBfromC(explicit) :  {0}", customBfromCex.ReverseDescription);
             Console.WriteLine("CustomBfromC(implpicit) : {0}", customBfromCimp.ReverseDescription);

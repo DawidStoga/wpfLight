@@ -29,6 +29,8 @@ namespace Client.CoreCSProgramming
             Console.WriteLine("value of en.A {0}", Enum.Format(typeof(En), En.C, "d"));
             Console.WriteLine("value of en.A {0}", Enum.Format(typeof(En), En.C, "f"));
             Console.WriteLine("value of en.A {0}", Enum.Format(typeof(En), En.C, "x"));
+            var first = Enum.GetValues(typeof(En)).Cast<En>().FirstOrDefault();
+
         }
 
     }

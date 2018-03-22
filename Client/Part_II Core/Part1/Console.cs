@@ -36,7 +36,7 @@ namespace Client.CoreCSProgramming
             // numerical value formating
             Console.WriteLine($@"
                 -c or C Currncy : {IntValue.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("pl-PL"))};
-                -d or D Decimal : {IntValue:2}
+                -d or D Decimal : {IntValue:d}
                 -e or E Exponen : {IntValue:e}
                 -f or F Fixed-P : {IntValue:f}
                 -g or G General : {IntValue:g}

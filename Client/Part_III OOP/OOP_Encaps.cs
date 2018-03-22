@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Client.OOP
 {
-   partial  class OOP_Encaps
+    partial class OOP_Encaps
     {
 
         public static void Oop()

@@ -25,7 +25,7 @@ namespace Client.BaseLibrary
             {
                 Console.Write(c.id + "  " );
             }
-
+            Console.ReadKey();
             result.ForAll(n =>
 
                 Console.WriteLine(n.id));

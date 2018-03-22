@@ -11,7 +11,7 @@ namespace EF_App
         public static void RunTest()
         {
             Console.WriteLine("Entity Framework");
-            //  AddDataAsync();
+             AddDataAsync();
             //  ViewData();
             //  AddDatatoModel();
             //  ViewDataRec2();

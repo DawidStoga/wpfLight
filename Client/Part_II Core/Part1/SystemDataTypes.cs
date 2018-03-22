@@ -9,7 +9,6 @@ namespace Client.CoreCSProgramming
 {
     partial class CoreCSPart1
     {
-
         private static void SystemDataTypes()
         {
             Console.WriteLine("\n------------3.4  System Data Types------------ \n");
@@ -29,6 +28,7 @@ namespace Client.CoreCSProgramming
             char.IsDigit("dawid", 2);
             bool isFalse;
             bool.TryParse("false", out isFalse);
+            
             Console.WriteLine(isFalse.ToString());
 
 

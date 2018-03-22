@@ -49,10 +49,10 @@ namespace Client.CoreCSProgramming
             //System.Diagnostic
 
             Process wpfProc = null;
-            wpfProc = Process.Start(@"E:\Projecty NET\wpfLight\AirBusWPF\bin\Debug\AirBusWPF.exe");
+          //  wpfProc = Process.Start(@"E:\Projecty NET\wpfLight\AirBusWPF\bin\Debug\AirBusWPF.exe");
             Console.WriteLine("\nClose WPF asap to get exit Code");
-            wpfProc.WaitForExit(30000);
-            Console.WriteLine("WPF exit Code: {0}", wpfProc.ExitCode);
+          //  wpfProc.WaitForExit(30000);
+          //  Console.WriteLine("WPF exit Code: {0}", wpfProc.ExitCode );
 
             global::System.Console.WriteLine($"{Environment.StackTrace}   \n Processors {Environment.ProcessorCount}  sys Dir {Environment.SystemDirectory}");
 

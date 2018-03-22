@@ -15,10 +15,10 @@ namespace Client.BaseLibrary
 
         public static void RunIOExamples()
         {
-            TestSerilaze();
-          //  RunIO();
-          //  RunSerialize();
-          //  RunXML();
+            //TestSerilaze();
+          RunIO();
+           RunSerialize();
+            RunXML();
         }
 
         // BinaryReader

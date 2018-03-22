@@ -51,11 +51,15 @@ namespace Client.Assemblies
 
                 // 2'nd way    Dunamic keyword
                  dynamic obj = Activator.CreateInstance(myExtClass, new object[] { "dawid" });
-                sRetun =  obj.ShowMessage("..Now I invokded method by reflection");
+                sRetun =  obj.ShowMessage("..Now I invokded method by dynamic");
                 Console.WriteLine(sRetun);
 
+
+           
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

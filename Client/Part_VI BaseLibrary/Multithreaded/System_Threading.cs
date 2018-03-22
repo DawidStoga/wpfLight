@@ -56,9 +56,10 @@ namespace Client.BaseLibrary
             global++;
             Console.BackgroundColor = ConsoleColor.Black;
             int sum = 0;
-            Console.WriteLine("Starting...{0}    ID:{1}", Thread.CurrentThread.ThreadState, Thread.CurrentThread.Name);
-            for (int i = 0; i < 20; i++)
+            Console.WriteLine("\nStarting...{0}    ID:{1}", Thread.CurrentThread.ThreadState, Thread.CurrentThread.Name);
+            for (int i = 0; i < 30; i++)
             {
+                
                 sum+= i;
                 Console.Write(" {0}", i++);
             }
@@ -97,41 +98,57 @@ namespace Client.BaseLibrary
         public static void   ThreadExamples()
         {
            
-          
+       /*   
             String.Format("------------------Start of ThreadExample: ", global).WriteWithColor(ConsoleColor.Blue);
             "============example_1 -  simple thread =========================".WriteWithColor(ConsoleColor.Red);
             SimpleThread();
             "=============End -  simple thread ==============================".WriteWithColor(ConsoleColor.DarkRed);
             Thread.Sleep(10000);
+
+         
+
             "============example_2 -  thread with delay =====================".WriteWithColor(ConsoleColor.Red);
             ThreadWithDelay();
             "============End -  thread with delay============================".WriteWithColor(ConsoleColor.DarkRed);
+ 
+
             Thread.Sleep(10000);
             "============example_3 -  thread with delay  + Join==============".WriteWithColor(ConsoleColor.Red);
             ThreadWithJoin();
             "============End -  thread with delay  + join====================".WriteWithColor(ConsoleColor.DarkRed);
             Thread.Sleep(4000);
+
+  */
+
             "============example_4 -  thread with  Prio =====================".WriteWithColor(ConsoleColor.Red);
             ThreadsWithPrio();
             "============End -  thread with prio   ==========================".WriteWithColor(ConsoleColor.DarkRed);
 
-             waitHandle.WaitOne();
+            waitHandle.WaitOne();
 
-
+ 
             Thread.Sleep(4000);
+
+
+
             "============example_5 -  threads with  Lock=====================".WriteWithColor(ConsoleColor.Red);
             ThreadsWithLock();
             "============End -  thread with lock  ==========================".WriteWithColor(ConsoleColor.DarkRed);
+
+
+
 
             "============example_6 -  threads with  InterLock=====================".WriteWithColor(ConsoleColor.Red);
             ThreadsWithInterlock();
             "============End -  thread with Interlock  ==========================".WriteWithColor(ConsoleColor.DarkRed);
 
+
+
             "============example_7 -  threads with  Pool=====================".WriteWithColor(ConsoleColor.Red);
             ThreadsWithPool();
             "============End -  thread with Pool  ==========================".WriteWithColor(ConsoleColor.DarkRed);
 
-
+          
             String.Format("------------------End of ThreadExample: ", global).WriteWithColor(ConsoleColor.Blue);
         }
 
@@ -153,10 +170,11 @@ namespace Client.BaseLibrary
         public static void SimpleThread()
         {
         Thread t2 = new Thread(Avg) { Name = "T2" };
+       //Second thread
+        t2.Start();
         //Main thread
         Avg();
-        //Second thread
-        t2.Start();
+   
         }
         public static void ThreadWithDelay()
         {

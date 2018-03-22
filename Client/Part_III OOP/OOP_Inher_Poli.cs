@@ -48,9 +48,13 @@ namespace Client.OOP
             BaseClass bs1 = new BaseClass();
             BaseClass bs2 = new BaseClass();
             BaseClass bs3 = bs1;
-            Console.WriteLine(bs1.Equals(bs2));//false
-            Console.WriteLine(bs1.Equals(bs3));//true
+            Console.WriteLine("SystemObject Base class");
+            Console.WriteLine("Vers1");
+
+            Console.WriteLine("bs1.Equals(bs2):   {0}",bs1.Equals(bs2));//false
+            Console.WriteLine("bs1.Equals(bs3): {0}", bs1.Equals(bs3));//true
             bs1.EqualVer2 = true;
+            Console.WriteLine("Vers2");
             Console.WriteLine(bs1.Equals(bs2));//true
             Console.WriteLine(bs1.Equals(bs3));//true
 
