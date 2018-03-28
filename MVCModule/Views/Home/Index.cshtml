@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using SimpleApp.Models
+@model List<string>
+
+<div class="container">
+    <div class="panel panel-primary">
+        @if (ViewBag.SelectedColor == null)
+        {
+            <h4 class="panel-heading">Vote for your favorite color</h4>
+        }
+        else
+        {
+            <h4 class="panel-heading">Change your vote from @ViewBag.SelectedColor</h4>
+        }
+        
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.DropDownList("color", 
+                    new SelectList(Enum.GetValues(typeof(Color))), "Choose a Color",
+                    new {@class = "form-control"});
+                <div>
+                    <button class="btn btn-primary" type="submit">Vote</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <h5 class="panel-heading">Results</h5>
+        <table class="table table-condensed table-striped">
+            @foreach (Color c in Enum.GetValues(typeof(Color))) {
+                <tr><td>@c</td><td>@Votes.GetVotes(c)</td></tr>
+            }
+        </table>
+    </div>
+    <div class="panel panel-primary">
+        <h5 class="panel-heading">Events</h5>
+        <table class="table table-condensed table-striped">
+            @foreach (string eventName in Model) {
+                <tr><td>@eventName</td></tr>
+            }
+        </table>
+    </div>
+</div>
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
