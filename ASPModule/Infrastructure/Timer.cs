@@ -12,7 +12,7 @@ namespace ASPModule.Infrastructure
         private Stopwatch timer;
         public void Dispose()
         {
-           
+
         }
 
         public void Init(HttpApplication context)
@@ -27,7 +27,7 @@ namespace ASPModule.Infrastructure
             HttpContext ctx = HttpContext.Current;
             if (ctx.CurrentNotification == RequestNotification.BeginRequest)
             {
-               timer = Stopwatch.StartNew();
+                timer = Stopwatch.StartNew();
             }
             else if (ctx.CurrentNotification == RequestNotification.EndRequest)
             {
