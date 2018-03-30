@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 namespace SimpleApp.Models
-{
+{//142  109/ 107
     public enum Color
     {
         Red, Green, Yellow, Purple

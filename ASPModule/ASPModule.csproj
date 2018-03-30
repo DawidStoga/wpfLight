@@ -162,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Timer.cs" />
+    <Compile Include="Infrastructure\TotalTimeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Votes.cs" />
   </ItemGroup>

@@ -14,6 +14,7 @@ namespace CommonModule
         public static void RegisterModule()
         {
             HttpApplication.RegisterModule(typeof(CommonModule.InfoModule));
+            
         }
     }
 }

@@ -6,9 +6,13 @@ using System.Web;
 
 namespace ASPModule.Infrastructure
 {
+    public class RequestTmerEventArgs : EventArgs
+    {
+        public float Duration  { get; set; }
+    }
     public class TimerModule : IHttpModule
     {
-
+        public event EventHandler<RequestTmerEventArgs> RequestTimed;
         private Stopwatch timer;
         public void Dispose()
         {
@@ -31,10 +35,18 @@ namespace ASPModule.Infrastructure
             }
             else if (ctx.CurrentNotification == RequestNotification.EndRequest)
             {
+              var duration =   ((float)timer.ElapsedTicks) / Stopwatch.Frequency;
+                
+
                 ctx.Response.Write(string.Format(
                     "<div class='alert alert-success'>Elapsed: {0:F5} seconds</div>",
-                    ((float)timer.ElapsedTicks) / Stopwatch.Frequency));
+                    duration));
                 timer.Stop();
+
+                if (RequestTimed != null)
+                {
+                    RequestTimed(this, new RequestTmerEventArgs(){Duration = duration});
+                }
             }
         }
     }
