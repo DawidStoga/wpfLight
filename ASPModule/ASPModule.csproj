@@ -161,6 +161,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CounterHandler.cs" />
+    <Compile Include="Infrastructure\CounterHandlerFactory.cs" />
     <Compile Include="Infrastructure\CustomRouteHandler.cs" />
     <Compile Include="Infrastructure\DayModule.cs" />
     <Compile Include="Infrastructure\DayOfWeeksHandler.cs" />

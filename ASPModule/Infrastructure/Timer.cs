@@ -38,9 +38,9 @@ namespace ASPModule.Infrastructure
               var duration =   ((float)timer.ElapsedTicks) / Stopwatch.Frequency;
                 
 
-                ctx.Response.Write(string.Format(
+             /*   ctx.Response.Write(string.Format(
                     "<div class='alert alert-success'>Elapsed: {0:F5} seconds</div>",
-                    duration));
+                    duration));*/
                 timer.Stop();
 
                 if (RequestTimed != null)

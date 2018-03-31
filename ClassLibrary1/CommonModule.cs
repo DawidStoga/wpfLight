@@ -50,10 +50,10 @@ namespace CommonModule
                     RequestTimed(this, new RequestTmerEventArgs() { Duration = duration });
                 }
             }
-            ctx.Response.Write(string.Format(
+           /* ctx.Response.Write(string.Format(
                 "<div class ='alert alert-success'>URL {0} Status: {1}</div>",
                 ctx.Request.RawUrl, ctx.Response.Status
-            ));
+            ));*/
         }
         public void Dispose()
         {
