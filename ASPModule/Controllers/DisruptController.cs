@@ -20,6 +20,12 @@ namespace ASPModule.Controllers
     {
         return RedirectToAction("Index", "Disrupt");
     }
+
+        public ActionResult ShowData()
+        {
+
+            return View();
+        }
     }
 
 
