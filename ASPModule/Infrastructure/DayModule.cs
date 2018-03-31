@@ -18,7 +18,7 @@ namespace ASPModule.Infrastructure
 
             context.PostMapRequestHandler += (src, args) =>
             {
-                if (context.Context.Handler is DayOfWeeksHandler)   //add time only for specific request when specific handler is selected
+                if (context.Context.Handler is IRequiresDate)   //handler identify by additional interface
                 {
                     context.Context.Items["DayModule_Time"] = DateTime.Now;
                 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ASPModule.Infrastructure
 {
-    public class DayOfWeeksHandler:IHttpHandler
+    public class DayOfWeeksHandler:IHttpHandler, IRequiresDate
     {
         public void ProcessRequest(HttpContext context)
         {

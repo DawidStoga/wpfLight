@@ -164,6 +164,7 @@
     <Compile Include="Infrastructure\CustomRouteHandler.cs" />
     <Compile Include="Infrastructure\DayModule.cs" />
     <Compile Include="Infrastructure\DayOfWeeksHandler.cs" />
+    <Compile Include="Infrastructure\IRequiresDate.cs" />
     <Compile Include="Infrastructure\SiteLengthHandler.cs" />
     <Compile Include="Infrastructure\Timer.cs" />
     <Compile Include="Infrastructure\TotalTimeModule.cs" />
