@@ -167,6 +167,7 @@
     <Compile Include="Infrastructure\CustomRouteHandler.cs" />
     <Compile Include="Infrastructure\DayModule.cs" />
     <Compile Include="Infrastructure\DayOfWeeksHandler.cs" />
+    <Compile Include="Infrastructure\disruptingLifeCycle\DebugModule.cs" />
     <Compile Include="Infrastructure\disruptingLifeCycle\InfoHandler.cs" />
     <Compile Include="Infrastructure\disruptingLifeCycle\RedirectModule.cs" />
     <Compile Include="Infrastructure\IRequiresDate.cs" />
