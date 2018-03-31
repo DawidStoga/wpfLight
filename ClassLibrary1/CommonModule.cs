@@ -21,6 +21,7 @@ namespace CommonModule
 
             context.BeginRequest += HandleEvent;
             context.EndRequest += HandleEvent;
+           
         }
 
         private void HandleEvent(object o, EventArgs e)
@@ -34,12 +35,15 @@ namespace CommonModule
             else if (ctx.CurrentNotification == RequestNotification.EndRequest)
             {
                 var duration = ((float)timer.ElapsedTicks) / Stopwatch.Frequency;
-
-
+                var cached = ctx.Cache.Get("Day");
+                if (cached != null && (bool) cached == false)
+                {
                 ctx.Response.Write(string.Format(
                     "<div class='alert alert-success'>Elapsed: {0:F5} seconds</div>",
                     duration));
                 timer.Stop();
+                }
+                
 
                 if (RequestTimed != null)
                 {

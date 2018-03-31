@@ -34,9 +34,14 @@ namespace ASPModule.Infrastructure
 
             context.EndRequest += (src, arg) =>
             {
-                context.Context.Response.Write(CreateSummary()
-                
-                );
+                var cached = context.Context.Cache.Get("Day");
+                if (cached != null && (bool)cached == false)
+                {
+                    context.Context.Response.Write(CreateSummary());
+                }
+
+                context.Context.Cache["day"] = false;
+
             };
         }
 
