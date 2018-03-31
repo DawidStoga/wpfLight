@@ -13,10 +13,9 @@ namespace ASPModule
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-       
 
-            routes.Add(new Route("dayhandler/{*path}",
-                new CustomRouteHandler(){HandlerType = typeof(DayOfWeeksHandler)}));
+            routes.IgnoreRoute("handler/{*path}");
+
 
            routes.MapRoute(
                 name: "Default",
