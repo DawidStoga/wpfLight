@@ -9,8 +9,18 @@ namespace ASPModule.Infrastructure
     {
         public void ProcessRequest(HttpContext context)
         {
-            var day = DateTime.Today.DayOfWeek.ToString();
-           day = Enum.GetName(typeof(DayOfWeek), DateTime.Today.DayOfWeek);
+            var day = DateTime.Today.DayOfWeek.ToString();  /*1 way*/
+            day = Enum.GetName(typeof(DayOfWeek), DateTime.Today.DayOfWeek); /*2 way*/
+
+            if (context.Items.Contains("DayModule_Time")  && (context.Items["DayModule_Time"] is DateTime))
+
+            {
+                day = ((DateTime) context.Items["DayModule_Time"]).DayOfWeek.ToString(); /*3 way*/
+                context.Response.Write("Day of Weeks sourced from DayMoudle_Time");
+            }
+         
+
+
             if (context.Request.CurrentExecutionFilePathExtension == ".json")
             {
                 context.Response.ContentType = "application/json";
