@@ -26,6 +26,12 @@ namespace ASPModule.Controllers
 
             return View();
         }
+
+        public JsonResult Break(int val = 0)
+        {
+            int result = 100 / val;
+            return Json(result);
+        }
     }
 
 

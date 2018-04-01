@@ -170,6 +170,7 @@
     <Compile Include="Infrastructure\disruptingLifeCycle\DebugModule.cs" />
     <Compile Include="Infrastructure\disruptingLifeCycle\InfoHandler.cs" />
     <Compile Include="Infrastructure\disruptingLifeCycle\RedirectModule.cs" />
+    <Compile Include="Infrastructure\disruptingLifeCycle\EventListModule.cs" />
     <Compile Include="Infrastructure\IRequiresDate.cs" />
     <Compile Include="Infrastructure\SiteLengthHandler.cs" />
     <Compile Include="Infrastructure\Timer.cs" />
