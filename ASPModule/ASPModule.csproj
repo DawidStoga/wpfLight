@@ -152,6 +152,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DeviceCapabilityController.cs" />
     <Compile Include="Controllers\DisruptController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Dane.Designer.cs">
@@ -175,6 +176,7 @@
     <Compile Include="Infrastructure\SiteLengthHandler.cs" />
     <Compile Include="Infrastructure\Timer.cs" />
     <Compile Include="Infrastructure\TotalTimeModule.cs" />
+    <Compile Include="Models\Programmer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Votes.cs" />
   </ItemGroup>
@@ -220,10 +222,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Disrupt\Index.cshtml" />
     <Content Include="Views\Disrupt\ShowData.cshtml" />
+    <Content Include="Views\DeviceCapability\Index.cshtml" />
+    <Content Include="Views\DeviceCapability\Browser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Infrastructure\DeviceCapability\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
