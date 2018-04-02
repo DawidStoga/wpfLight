@@ -31,16 +31,15 @@ namespace ASPModule.Controllers
         {
             configData = new Dictionary<string, string>();
 
-            var def = WebConfigurationManager.GetSection("NewUserDefaults");
-            var con = NewUserDefaultsSection.GetConfiguration().City;
+            var def = WebConfigurationManager.GetSection("newUserDefaults");
+           
             var nuDefaults =
-                WebConfigurationManager.GetWebApplicationSection("newUserDefaults");
-                //as NewUserDefaultsSection;
-          var   nuDefaultsU = nuDefaults as NewUserDefaultsSection;
-            configData.Add("City", nuDefaultsU.City);
-            configData.Add("Country", nuDefaultsU.Country);
-            configData.Add("Language", nuDefaultsU.Language);
-            configData.Add("Region", nuDefaultsU.Region.ToString());
+                WebConfigurationManager.GetWebApplicationSection("newUserDefaults") as NewUserDefaultsSection;
+        
+            configData.Add("City", nuDefaults.City);
+            configData.Add("Country", nuDefaults.Country);
+            configData.Add("Language", nuDefaults.Language);
+            configData.Add("Region", nuDefaults.Region.ToString());
             return View("Index",configData);
         }
     }
