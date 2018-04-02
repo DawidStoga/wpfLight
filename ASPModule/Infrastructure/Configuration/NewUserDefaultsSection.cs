@@ -10,6 +10,7 @@ namespace ASPModule.Infrastructure.Configuration
     {
 
         [ConfigurationProperty("city",IsRequired = true)]
+        [CallbackValidator(CallbackMethodName = "ValidateCity",Type = typeof(NewUserDefaultsSection))]
         public string City
         {
             get { return (string) this["city"]; }
@@ -34,5 +35,14 @@ namespace ASPModule.Infrastructure.Configuration
             get { return (int)this["regionCode"]; }
             set { this["regionCode"] = value; }
         }
+
+        public static void ValidateCity(object candidateValue)  //must be static, returm void and take one parameter of object type
+        {
+            if ((string) candidateValue == "Warszawa")
+            {
+                throw new Exception("Unsoported City Value");
+            }
+        }
+
     }
 }
