@@ -164,6 +164,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Configuration\Feature.cs" />
+    <Compile Include="Infrastructure\Configuration\FeatureCollection.cs" />
+    <Compile Include="Infrastructure\Configuration\FeatureSection.cs" />
     <Compile Include="Infrastructure\Configuration\NewUserDefaultsSection.cs" />
     <Compile Include="Infrastructure\CounterHandler.cs" />
     <Compile Include="Infrastructure\CounterHandlerFactory.cs" />

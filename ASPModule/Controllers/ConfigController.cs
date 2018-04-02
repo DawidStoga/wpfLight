@@ -42,5 +42,19 @@ namespace ASPModule.Controllers
             configData.Add("Region", nuDefaults.Region.ToString());
             return View("Index",configData);
         }
+
+        public ActionResult Feature()
+        {
+            Dictionary<string, string> configData = new Dictionary<string, string>();
+            FeatureSection section = WebConfigurationManager
+                .GetWebApplicationSection("features") as FeatureSection;
+            foreach (Feature place in section.Features)
+            {
+                configData.Add(place.Code, string.Format("{0} ({1})",
+                    place.City, place.Country));
+            }
+            return View("Index",configData);
+        }
+
     }
 }
