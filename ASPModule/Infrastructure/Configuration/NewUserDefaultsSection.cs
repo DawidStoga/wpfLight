@@ -9,6 +9,22 @@ namespace ASPModule.Infrastructure.Configuration
     public class NewUserDefaultsSection:ConfigurationSection
     {
 
+
+        public static NewUserDefaultsSection GetConfiguration()
+        {
+            NewUserDefaultsSection configuration =  ConfigurationManager.GetSection("NewUserDefaults") as NewUserDefaultsSection;
+
+            if (configuration != null)
+                return configuration;
+
+            return new NewUserDefaultsSection();
+        }
+
+
+
+
+
+
         [ConfigurationProperty("city",IsRequired = true)]
         [CallbackValidator(CallbackMethodName = "ValidateCity",Type = typeof(NewUserDefaultsSection))]
         public string City
