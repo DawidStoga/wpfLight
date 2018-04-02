@@ -1,0 +1,31 @@
+﻿@model Dictionary<string, string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width"/>
+    <style> body { padding-top: 10px; } </style>
+    <title>Configuration</title>
+</head>
+<body class="container">
+<div class="panel panel-primary">
+<div class="panel-heading">Configuration Data - AppSetting Section</div>
+<table class="table table-striped">
+    <thead>
+    <tr><th>Property</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+    @foreach (string key in Model.Keys) {
+        <tr><td>@key</td><td>@Model[key]</td></tr>
+    }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
