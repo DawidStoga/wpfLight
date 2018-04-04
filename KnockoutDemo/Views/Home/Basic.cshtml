@@ -1,21 +1,21 @@
 ﻿@{
     ViewBag.Title = "Basic";
 }
-<h2>Hello : <span data-bind="text: getName()"/></h2>
+<h2>Hello : <span data-bind="text: getName"/></h2>
 <p>First name: <input data-bind="value:firstName" /></p>
 <p>LastName name: <input data-bind="value:lastName" /></p>
 <!-- Simple example of ko.observable-->
 @section Scripts{
     <script>
-        function ViewModel(imie,nazwisko) {
+        function ViewModel(imie, nazwisko) {
             var self = this;
             self.firstName = ko.observable(imie);
             self.lastName = ko.observable(nazwisko);
-            
-            self.getName = function() {
-                return self.firstName() + self.lastName();
-            }
-        };
+
+            this.getName = ko.computed(function() {
+                    return this.firstName() + " " + this.lastName();}, this);
+
+        }
 
 
         var viewModel = new ViewModel('Dawid', 'Stoga');
