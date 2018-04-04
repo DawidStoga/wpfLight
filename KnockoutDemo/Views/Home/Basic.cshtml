@@ -4,16 +4,68 @@
 <h2>Hello : <span data-bind="text: getName"/></h2>
 <p>First name: <input data-bind="value:firstName" /></p>
 <p>LastName name: <input data-bind="value:lastName" /></p>
-<!-- Simple example of ko.observable-->
+<!-- Simple example of foreach-->
+
+
+<h2>Your fly reservations</h2>
+
+
+<table>
+    <thead><tr>
+        <th>Date</th><th> Airline    </th>><th>     Start </th><th>     Destination </th><th></th>
+    </tr></thead>
+    <!-- Todo: Generate table body -->
+    <tbody data-bind="foreach:flights">
+    <tr>
+        
+        <td data-bind="text:flight().date"></td>
+        <td > LOT </td>
+        <td data-bind="text:flight().from"></td>
+        <td data-bind="text:flight().to"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+
 @section Scripts{
     <script>
+
+
+        function FlightReservation(name, flights) {
+            var self = this;
+            self.name = name;
+            self.flight = ko.observable(flights);
+        }
+
         function ViewModel(imie, nazwisko) {
             var self = this;
             self.firstName = ko.observable(imie);
             self.lastName = ko.observable(nazwisko);
 
             this.getName = ko.computed(function() {
-                    return this.firstName() + " " + this.lastName();}, this);
+                    return this.firstName() + " " + this.lastName().toUpperCase();
+                },
+                this);
+
+
+
+
+            self.availableFlights = [
+                { date: "01.03.2014", from: 'Warsaw', to: 'London' },
+                { date: "05.11.2014", from: 'Wroclaw', to: 'Paris' },
+                { date: "21.06.2018", from: 'Munich', to: 'Wroclaw' },
+                { date: "01.03.2018", from: 'London', to: 'Moskow' }
+            ];
+
+
+            self.flights = ko.observableArray([
+                new FlightReservation(self.firstName(), self.availableFlights[2]),
+                new FlightReservation(self.firstName(), self.availableFlights[0]),
+                new FlightReservation(self.firstName(), self.availableFlights[1])
+                ]
+            );
 
         }
 
