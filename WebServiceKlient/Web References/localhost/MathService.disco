@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost:59480/MathService.asmx?wsdl" docRef="http://localhost:59480/MathService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost:59480/MathService.asmx" xmlns:q1="http://itcraftsman.pl" binding="q1:MathServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:59480/MathService.asmx" xmlns:q2="http://itcraftsman.pl" binding="q2:MathServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
