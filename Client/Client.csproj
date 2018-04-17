@@ -103,6 +103,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeaturesEnable.cs" />
     <Compile Include="Part_II Core\Part1\ImplicityTypes.cs" />
     <Compile Include="Part_II Core\Part1\DEcision Contruct.cs" />
     <Compile Include="Part_II Core\Part1\NarrowingConversion.cs" />

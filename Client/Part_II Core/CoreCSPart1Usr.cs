@@ -21,9 +21,45 @@ namespace Client.CoreCSProgramming
             Decision_Constructs
           }
 
+
+        public static void Run(Action called)
+        {
+            var type = typeof(ImplementedFeatures);
+            var member = (ImplementedFeatures) Enum.Parse(type, called.Method.Name);
+
+            var feature = (FeatureAttribute)(type
+                .GetMember(member.ToString())
+                .FirstOrDefault()
+                .GetCustomAttributes(typeof(FeatureAttribute), true)
+                .FirstOrDefault());
+
+            if(feature.Enabled)
+            {
+                called();
+            }
+
+            
+
+
+            var p = type.GetMember("Enviroment").FirstOrDefault();
+            var a = (FeatureAttribute)p.GetCustomAttributes(typeof(FeatureAttribute), true).FirstOrDefault();
+            var t = a.Enabled;
+           
+
+            /*var f = type.GetField("ImplementedFeatures");
+            var field = type.GetField(Enum.GetName(type, EnumMethod));
+        var attribute =     Attribute.GetCustomAttribute(field, typeof(FeatureAttribute));
+
+            var memInfo = type.GetMembers(System.Reflection.BindingFlags.Public);*/
+
+        }
         public static void RunExamples(Examples ex)
         {
+            //Run(Enviroment);
 
+            CompareStrings();
+
+            /*
 
             Console.WriteLine("***************CORE PROGRAMMING********************************");
             if ((ex & Examples.Enviroment)          == Examples.Enviroment)          Enviroment();
@@ -32,7 +68,7 @@ namespace Client.CoreCSProgramming
             if ((ex & Examples.StringData)          == Examples.StringData)          StringData();
             if ((ex & Examples.NarrowingConversion) == Examples.NarrowingConversion) NarrowingConversion();
             if ((ex & Examples.ImplicitlyTypes)     == Examples.ImplicitlyTypes)     ImplicitlyTypes();
-            if ((ex & Examples.Decision_Constructs) == Examples.Decision_Constructs) Decision_Constructs();
+            if ((ex & Examples.Decision_Constructs) == Examples.Decision_Constructs) Decision_Constructs();*/
         }
     }
 }

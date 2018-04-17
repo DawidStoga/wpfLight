@@ -34,12 +34,16 @@ namespace Client
         static void Main(string[] args)
         {
 
+            
+
+
+
 
             var saved = Console.Out;
 
             using (StreamWriter sw = new StreamWriter(@"E:\out.txt"))
             {
-                Console.SetOut(sw);
+               // Console.SetOut(sw);
                 Console.WriteLine("DAWID STOGA 134619");
 
 
@@ -59,7 +63,7 @@ namespace Client
                  Console.SetOut(saved);
 
 
-                  Multithreaded.RunExamples();
+               //   Multithreaded.RunExamples();
                 //  IO.RunIOExamples();
                 // AdoNET.RunAdoExamples();
 

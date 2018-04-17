@@ -18,6 +18,8 @@ namespace Client.CoreCSProgramming
         /// Example of using static methods of Enviriment class
         /// Example of using Start from System.Diagnostic class
         /// </remarks>
+        
+        [Feature(Enabled = true)]
         private static void Enviroment()
         {
             Console.WriteLine("\n------------3.2  System.Enviroment Class------------\n ");

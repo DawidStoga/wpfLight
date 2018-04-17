@@ -74,7 +74,61 @@ namespace Client.CoreCSProgramming
             sb.Append(5).AppendFormat("0:x", 2).Replace('i', 'y');
             Console.WriteLine(sb);
       
-      
         }
+
+        public static void CompareStrings()
+        {
+            var individualAddrress = new Address
+            {
+                City = "Wroclaw",
+                Country = "Poland",
+                Line1 = "Gdynska",
+                Postcode = "25-545"
+            };
+
+            var CompanyAddress = new Address
+            {
+                City = "Wroclaw",
+                Country = "poland",
+                Line1 = "ul. gdynska",
+                Postcode = "25-545"
+            };
+
+
+
+            Console.WriteLine("individualAddrress == CompanyAddress      {0}", individualAddrress == CompanyAddress);
+
+            var t  = ToNormalAddressFormat("OFC ST , dsaas,ewrw");
+
+
+        }
+
+
+        public static string Substitute(string s)
+        {
+            var abbrevs = new Dictionary<string, string>();
+            abbrevs.Add("OFC", "OFFICE");
+            abbrevs.Add("ST", "STREET");
+            abbrevs.Add("ST.", "STREET");
+            if (abbrevs.ContainsKey(s)) return abbrevs[s];
+            return (s);
+        }
+
+        public static string ToNormalAddressFormat(string address)
+        {
+            return address.Split(' ').ToList().Select(Substitute).Aggregate((x, y) => x + y);
+        }
+
+        class Address
+        {
+            public string Line1 { get; set; }
+            public string Line2 { get; set; }
+            public string Line3 { get; set; }
+            public string Line4 { get; set; }
+            public string City { get; set; }
+            public string Country { get; set; }
+            public string Postcode { get; set; }
+        }
+
     }
 }
