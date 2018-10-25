@@ -111,6 +111,10 @@ namespace Client.CoreCSProgramming
             abbrevs.Add("ST", "STREET");
             abbrevs.Add("ST.", "STREET");
             if (abbrevs.ContainsKey(s)) return abbrevs[s];
+
+            // or use :
+           // if (abbrevs.TryGetValue(s, out var abbr)) return abbr;
+
             return (s);
         }
 
