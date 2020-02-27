@@ -5,5 +5,6 @@ namespace CommonModules
 {
     public class InfoModule
     {
+        //
     }
 }
