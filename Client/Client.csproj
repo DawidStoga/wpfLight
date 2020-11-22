@@ -105,7 +105,7 @@
   <ItemGroup>
     <Compile Include="FeaturesEnable.cs" />
     <Compile Include="Part_II Core\Part1\ImplicityTypes.cs" />
-    <Compile Include="Part_II Core\Part1\DEcision Contruct.cs" />
+    <Compile Include="Part_II Core\Part1\Decision Contruct.cs" />
     <Compile Include="Part_II Core\Part1\NarrowingConversion.cs" />
     <Compile Include="Part_II Core\Part1\SomeTricky.cs" />
     <Compile Include="Part_II Core\Part1\StringData.cs" />
